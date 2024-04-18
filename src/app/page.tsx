@@ -54,7 +54,7 @@ const WeatherForecast = () => {
         <input
           type="text"
           className='text-black border border-gray-300 px-4 py-2 rounded-lg w-64 focus:outline-none focus:border-blue-500 mb-2'
-          placeholder="Enter location (e.g., Diamante)"
+          placeholder="Ingrese una ciudad (ej, Diamante)"
           value={location}
           onChange={handleLocationChange}
         />
@@ -73,13 +73,13 @@ const WeatherForecast = () => {
 
       <div className={`grid xl:grid-cols-4 grid-cols-2 gap-4 mt-4 px-2`}>
         {weatherImages.map((image) => (
-          <img key={image.id} src={image.urls.thumb} alt="" className="w-[350px]" />
+          <img key={image.id} src={image.urls.small} alt="" className="w-[350px]" />
         ))}
       </div>
 
       <div className={`grid xl:grid-cols-4 grid-cols-2 gap-4 mt-4 px-2`}>
         {cityImages.map((image) => (
-          <img key={image.id} src={image.urls.thumb} alt="" className="w-[350px]" />
+          <img key={image.id} src={image.urls.small} alt="" className="w-[350px]" />
         ))}
       </div>
     </div>
