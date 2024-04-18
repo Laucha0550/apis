@@ -66,6 +66,9 @@ const WeatherForecast = () => {
             <p>Fecha: {day.date}</p>
             <p>Temperatura Máxima: {day.day.maxtemp_c}°C</p>
             <p>Temperatura Mínima: {day.day.mintemp_c}°C</p>
+            <p>Porcentaje de humedad: {day.day.avghumidity}%</p>
+            <p>Velocidad del viento: {day.day.maxwind_kph} km/h</p>
+            <p>Probabilidad de lluvia: {day.day.daily_chance_of_rain}%</p>
             <p>Condición Actual: {currentCondition}</p>
           </li>
         ))}
