@@ -48,7 +48,7 @@ const WeatherForecast = () => {
   };
 
   return (
-    <div className="h-full w-full mx-auto bg-gray-100 text-black text-center">
+    <div className="h-screen overflow-auto w-full mx-auto bg-gray-100 text-black text-center">
       <h1 className="text-2xl font-bold mb-4">API Clima con fotos</h1>
       <div className="mb-4 flex flex-col items-center">
         <input
