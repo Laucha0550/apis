@@ -10,9 +10,15 @@ const WeatherForecast = () => {
   const [currentCondition, setCurrentCondition] = useState('');
   const [weatherImages, setWeatherImages] = useState([]);
   const [cityImages, setCityImages] = useState([]);
+  const [time, setTime] = useState('12:00'); // Agrega este estado para la hora
+  const [feelsLike, setFeelsLike] = useState(''); // Agrega este estado para la sensación térmica
 
   const handleLocationChange = (event) => {
     setLocation(event.target.value);
+  };
+
+  const handleTimeChange = (event) => {
+    setTime(event.target.value); // Agrega este manejador para la hora
   };
 
   const getWeatherData = async () => {
@@ -23,6 +29,7 @@ const WeatherForecast = () => {
       const data = await response.json();
       setForecast(data.forecast.forecastday);
       setCurrentCondition(data.current.condition.text);
+      setFeelsLike(data.current.feelslike_c); // Actualiza la sensación térmica
 
       // Después de obtener el pronóstico del tiempo, busca imágenes relevantes
       searchImages(data.current.condition.text, setWeatherImages);
@@ -57,6 +64,12 @@ const WeatherForecast = () => {
           placeholder="Ingrese una ciudad (ej, Diamante)"
           value={location}
           onChange={handleLocationChange}
+        />
+        <input
+          type="time"
+          className='text-black border border-gray-300 px-4 py-2 rounded-lg w-64 focus:outline-none focus:border-blue-500 mb-2'
+          value={time}
+          onChange={handleTimeChange} // Agrega este input para la hora
         />
         <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600" onClick={handleSearch}>Buscar</button>
       </div>
